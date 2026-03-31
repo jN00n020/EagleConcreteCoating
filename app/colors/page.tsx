@@ -42,8 +42,7 @@ export default function ColorsPage() {
           </h1>
           <p className="text-lg text-navy-100 max-w-2xl mx-auto">
             Choose from our premium selection of decorative flake colors and
-            patterns. Each option is available with our professional polyurea
-            chip system.
+            patterns. Click any color to request a free quote!
           </p>
         </div>
       </section>
@@ -53,9 +52,10 @@ export default function ColorsPage() {
         <div className="section-container">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {colors.map((color) => (
-              <div
+              <Link
                 key={color.name}
-                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200"
+                href={`/?color=${encodeURIComponent(color.name)}#quote`}
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-accent-400 cursor-pointer"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
@@ -65,13 +65,19 @@ export default function ColorsPage() {
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
                     sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-accent-600/0 group-hover:bg-accent-600/20 transition-colors duration-300 flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-accent-600 text-white px-4 py-2 rounded-lg font-semibold text-sm shadow-lg">
+                      Get a Quote
+                    </span>
+                  </div>
                 </div>
-                <div className="p-4 bg-white">
+                <div className="p-4 bg-white group-hover:bg-accent-50 transition-colors duration-300">
                   <h3 className="text-lg font-bold text-gray-900 text-center">
                     {color.name}
                   </h3>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -84,7 +90,7 @@ export default function ColorsPage() {
             Love a color? Let&apos;s get started!
           </h2>
           <p className="text-white/80 mb-6">
-            Call us to schedule a free consultation and see samples in person.
+            Click any color above to request a quote, or call us to see samples in person.
           </p>
           <a
             href="tel:9527697905"

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -295,7 +296,9 @@ export default function Home() {
             Get a Free Quote
           </h2>
           <div className="w-20 h-1 bg-accent-600 mx-auto mt-1 mb-6 rounded-full" />
-          <QuoteForm />
+          <Suspense fallback={null}>
+            <QuoteForm />
+          </Suspense>
         </div>
       </section>
 

@@ -1,10 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { Send, CheckCircle, X, Palette } from "lucide-react";
 
 export default function QuoteForm() {
+  const searchParams = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+
+  useEffect(() => {
+    const color = searchParams.get("color");
+    if (color) {
+      setSelectedColor(color);
+    }
+  }, [searchParams]);
 
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -18,7 +28,11 @@ export default function QuoteForm() {
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
         <h4 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h4>
         <p className="text-gray-600">
-          We&apos;ve received your request. Colton will be in touch shortly to discuss your project.
+          We&apos;ve received your request
+          {selectedColor && (
+            <> for the <span className="font-semibold text-accent-600">{selectedColor}</span> finish</>
+          )}
+          . Colton will be in touch shortly to discuss your project.
         </p>
       </div>
     );
@@ -32,6 +46,29 @@ export default function QuoteForm() {
       onSubmit={handleSubmit}
       className="space-y-4 bg-white p-6 sm:p-8 rounded-xl shadow-md"
     >
+      {/* Selected color badge */}
+      {selectedColor && (
+        <div className="flex items-center gap-2 bg-accent-50 border border-accent-200 rounded-lg px-4 py-3">
+          <Palette className="w-5 h-5 text-accent-600 flex-shrink-0" />
+          <span className="text-sm text-gray-700">
+            Selected color: <span className="font-bold text-accent-700">{selectedColor}</span>
+          </span>
+          <button
+            type="button"
+            onClick={() => setSelectedColor(null)}
+            className="ml-auto text-gray-400 hover:text-gray-600 transition-colors"
+            aria-label="Remove selected color"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
+      {/* Hidden field so color is included in form data */}
+      {selectedColor && (
+        <input type="hidden" name="selectedColor" value={selectedColor} />
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="firstName" className="sr-only">First Name</label>
