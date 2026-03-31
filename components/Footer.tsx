@@ -71,7 +71,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 <a
                   href="mailto:eagleconcretecoatingsl.l.c@gmail.com"
-                  className="hover:text-white transition-colors break-all"
+                  className="hover:text-white transition-colors text-sm"
                 >
                   eagleconcretecoatingsl.l.c@gmail.com
                 </a>

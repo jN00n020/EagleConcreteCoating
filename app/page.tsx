@@ -96,6 +96,7 @@ export default function Home() {
             <h2 className="section-title">
               Why Choose <span className="text-accent-600">Eagle Concrete Coatings</span>?
             </h2>
+            <div className="w-20 h-1 bg-accent-600 mx-auto mt-3 mb-4 rounded-full" />
             <p className="section-subtitle">
               We deliver exceptional results with industry-leading materials and
               expert craftsmanship
@@ -122,7 +123,7 @@ export default function Home() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border-t-4 border-accent-600"
               >
                 <div className="w-14 h-14 bg-accent-50 rounded-lg flex items-center justify-center mb-5">
                   <card.icon className="w-8 h-8 text-accent-600" />
@@ -140,6 +141,7 @@ export default function Home() {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title">Our Coating System</h2>
+            <div className="w-20 h-1 bg-navy-700 mx-auto mt-3 mb-4 rounded-full" />
             <p className="section-subtitle">
               Enhance your space with our premium coating option, designed
               specifically for your needs.
@@ -147,7 +149,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="rounded-xl p-8 bg-navy-50 shadow-lg border border-navy-100">
+            <div className="rounded-xl p-8 bg-navy-50 shadow-lg border-l-4 border-accent-600">
               <h3 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-8 text-center">
                 Polyurea Chip System
               </h3>
@@ -173,10 +175,11 @@ export default function Home() {
       </section>
 
       {/* ── BEFORE & AFTER SLIDER ── */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gradient-to-b from-gray-50 to-accent-50/30">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title">See the Transformation</h2>
+            <div className="w-20 h-1 bg-accent-600 mx-auto mt-3 mb-4 rounded-full" />
             <p className="section-subtitle">
               Drag the slider to see the dramatic difference our concrete coating
               makes
@@ -214,6 +217,7 @@ export default function Home() {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title">Customer Reviews</h2>
+            <div className="w-20 h-1 bg-accent-600 mx-auto mt-3 mb-4 rounded-full" />
             <p className="section-subtitle">
               See what our satisfied customers have to say about our work
             </p>
@@ -239,7 +243,7 @@ export default function Home() {
             ].map((review) => (
               <div
                 key={review.name}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200"
+                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border-l-4 border-navy-700"
               >
                 {/* Stars */}
                 <div className="flex items-center gap-1 mb-4">
@@ -285,11 +289,12 @@ export default function Home() {
       </section>
 
       {/* ── QUOTE FORM ── */}
-      <section id="quote" className="section-padding bg-gray-50">
+      <section id="quote" className="section-padding bg-gradient-to-b from-gray-50 to-navy-50/40">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 text-center">
             Get a Free Quote
           </h2>
+          <div className="w-20 h-1 bg-accent-600 mx-auto mt-1 mb-6 rounded-full" />
           <QuoteForm />
         </div>
       </section>
@@ -299,6 +304,7 @@ export default function Home() {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title">Contact Information</h2>
+            <div className="w-20 h-1 bg-navy-700 mx-auto mt-3 mb-4 rounded-full" />
             <p className="section-subtitle">
               Get in touch with us for your concrete coating needs
             </p>
@@ -324,9 +330,11 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
               <a
                 href="mailto:eagleconcretecoatingsl.l.c@gmail.com"
-                className="text-accent-600 hover:text-accent-700 font-medium break-all"
+                className="text-accent-600 hover:text-accent-700 font-medium text-sm sm:text-base"
               >
-                eagleconcretecoatingsl.l.c@gmail.com
+                eagleconcretecoatingsl.l.c
+                <br className="sm:hidden" />
+                @gmail.com
               </a>
             </div>
             <div className="text-center">
@@ -345,6 +353,7 @@ export default function Home() {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title">Our Service Area</h2>
+            <div className="w-20 h-1 bg-accent-600 mx-auto mt-3 mb-4 rounded-full" />
             <p className="section-subtitle">
               Proudly serving residential and commercial customers across the
               South Metro
