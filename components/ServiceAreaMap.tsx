@@ -5,7 +5,7 @@ export default function ServiceAreaMap() {
     <div className="w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
       <iframe
         title="Eagle Concrete Coatings Service Area — South Metro Minnesota"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d180000!2d-93.27!3d44.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d180000!2d-93.2777!3d44.6497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1711800000000!5m2!1sen!2sus"
         width="100%"
         height="400"
         style={{ border: 0 }}

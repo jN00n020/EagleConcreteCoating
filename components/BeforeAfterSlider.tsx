@@ -86,14 +86,13 @@ export default function BeforeAfterSlider({
       {/* Before image (clipped) */}
       <div
         className="absolute inset-0 overflow-hidden"
-        style={{ width: `${sliderPos}%` }}
+        style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
       >
         <Image
           src={beforeSrc}
           alt={beforeAlt}
           fill
           className="object-cover"
-          style={{ minWidth: containerRef.current?.offsetWidth || "100%" }}
           sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />

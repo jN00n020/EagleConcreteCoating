@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
 
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     // TODO: wire up to a real form backend (e.g. Formspree, EmailJS, or API route)
     setSubmitted(true);
@@ -24,55 +24,82 @@ export default function QuoteForm() {
     );
   }
 
+  const inputClass =
+    "w-full px-4 py-3 text-base rounded-lg border border-gray-300 focus:border-accent-600 focus:ring-2 focus:ring-accent-200 focus:outline-none transition-all";
+
   return (
     <form
       onSubmit={handleSubmit}
       className="space-y-4 bg-white p-6 sm:p-8 rounded-xl shadow-md"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="firstName" className="sr-only">First Name</label>
+          <input
+            id="firstName"
+            type="text"
+            placeholder="First Name"
+            required
+            name="firstName"
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label htmlFor="lastName" className="sr-only">Last Name</label>
+          <input
+            id="lastName"
+            type="text"
+            placeholder="Last Name"
+            required
+            name="lastName"
+            className={inputClass}
+          />
+        </div>
+      </div>
+      <div>
+        <label htmlFor="email" className="sr-only">Email Address</label>
         <input
-          type="text"
-          placeholder="First Name"
+          id="email"
+          type="email"
+          placeholder="Email Address"
           required
-          name="firstName"
-          className="w-full px-4 py-3 text-base rounded-lg border-gray-300 focus:border-accent-600 focus:ring-accent-200"
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          required
-          name="lastName"
-          className="w-full px-4 py-3 text-base rounded-lg border-gray-300 focus:border-accent-600 focus:ring-accent-200"
+          name="email"
+          className={inputClass}
         />
       </div>
-      <input
-        type="email"
-        placeholder="Email Address"
-        required
-        name="email"
-        className="w-full px-4 py-3 text-base rounded-lg border-gray-300 focus:border-accent-600 focus:ring-accent-200"
-      />
-      <input
-        type="tel"
-        placeholder="Phone #"
-        required
-        name="phone"
-        className="w-full px-4 py-3 text-base rounded-lg border-gray-300 focus:border-accent-600 focus:ring-accent-200"
-      />
-      <input
-        type="text"
-        placeholder="City"
-        required
-        name="city"
-        className="w-full px-4 py-3 text-base rounded-lg border-gray-300 focus:border-accent-600 focus:ring-accent-200"
-      />
-      <textarea
-        name="projectOverview"
-        placeholder="Tell us about your project..."
-        rows={4}
-        required
-        className="w-full px-4 py-3 text-base rounded-lg border-gray-300 focus:border-accent-600 focus:ring-accent-200 resize-none"
-      />
+      <div>
+        <label htmlFor="phone" className="sr-only">Phone Number</label>
+        <input
+          id="phone"
+          type="tel"
+          placeholder="Phone #"
+          required
+          name="phone"
+          className={inputClass}
+        />
+      </div>
+      <div>
+        <label htmlFor="city" className="sr-only">City</label>
+        <input
+          id="city"
+          type="text"
+          placeholder="City"
+          required
+          name="city"
+          className={inputClass}
+        />
+      </div>
+      <div>
+        <label htmlFor="projectOverview" className="sr-only">Project Overview</label>
+        <textarea
+          id="projectOverview"
+          name="projectOverview"
+          placeholder="Tell us about your project..."
+          rows={4}
+          required
+          className={`${inputClass} resize-none`}
+        />
+      </div>
       <button
         type="submit"
         className="btn-primary w-full py-3.5 text-base"

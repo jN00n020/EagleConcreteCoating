@@ -60,6 +60,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden p-2 text-navy-800"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
