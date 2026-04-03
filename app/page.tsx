@@ -83,7 +83,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10">
                 <Award className="w-5 h-5 text-accent-400" />
-                <span className="font-semibold text-sm">Years of Experience</span>
+                <span className="font-semibold text-sm">2+ Years in Business</span>
               </div>
             </div>
           </div>
@@ -358,8 +358,8 @@ export default function Home() {
             <h2 className="section-title">Our Service Area</h2>
             <div className="w-20 h-1 bg-accent-600 mx-auto mt-3 mb-4 rounded-full" />
             <p className="section-subtitle">
-              Proudly serving residential and commercial customers across the
-              South Metro
+              Proudly serving residential and commercial customers across
+              Minnesota
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
