@@ -31,14 +31,16 @@ export default function Home() {
           <div className="text-center text-white">
             {/* Logo */}
             <div className="flex justify-center mb-6">
-              <Image
-                src="/logo.svg"
-                alt="Eagle Concrete Coatings LLC"
-                width={280}
-                height={140}
-                className="w-64 sm:w-80 h-auto drop-shadow-2xl"
-                priority
-              />
+              <div className="bg-white rounded-full p-6 sm:p-8 shadow-2xl ring-4 ring-white/30">
+                <Image
+                  src="/logo.svg"
+                  alt="Eagle Concrete Coatings LLC"
+                  width={280}
+                  height={280}
+                  className="w-48 h-48 sm:w-56 sm:h-56 object-contain"
+                  priority
+                />
+              </div>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
